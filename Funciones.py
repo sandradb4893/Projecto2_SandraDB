@@ -67,3 +67,16 @@ def agregar_estudiante(nombre, edad, grado):
         messagebox.showerror("Error no se pudo agregar el estudiante al sistema")
 
 
+# Función para buscar un estudiante en el sistema
+def buscar_estudiante(nombre):
+    try:
+        estudiante_list = EstudianteList()
+        estudiante = estudiante_list.buscar_estudiante(nombre)
+        if estudiante:
+            messagebox.showinfo("Resultado", f"Nombre: {estudiante.nombre}\nEdad: {estudiante.edad}\nGrado: {estudiante.grado}\n")
+        else:
+            messagebox.showerror("Error", f"No se encontró ningún estudiante con el nombre {nombre}")
+    except:
+        messagebox.showerror("Error no se encontró al estudiante en el sistema")
+
+
