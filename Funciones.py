@@ -57,3 +57,13 @@ class EstudianteList(metaclass=Singleton):
             "Grado": estudiante.grado,
         } for estudiante in self.estudiantes]
 
+# Función para agregar un estudiante al sistema
+def agregar_estudiante(nombre, edad, grado):
+    try:
+        estudiante_list = EstudianteList()
+        estudiante_list.agregar_estudiante(nombre, edad, grado)
+        messagebox.showinfo("Éxito", f"El estudiante {nombre} se agregó al sistema")
+    except:
+        messagebox.showerror("Error no se pudo agregar el estudiante al sistema")
+
+
