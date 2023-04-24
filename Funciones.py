@@ -79,4 +79,16 @@ def buscar_estudiante(nombre):
     except:
         messagebox.showerror("Error no se encontró al estudiante en el sistema")
 
+# Función para mostrar la lista completa de estudiantes en el sistema
+def mostrar_estudiante_list():
+    try:
+        estudiante_list = EstudianteList()
+        estudiante_nombres = estudiante_list.get_estudiante_nombres()
+        if estudiante_nombres:
+            estudiante_list_str = "\n".join(estudiante_nombres)
+            messagebox.showinfo("Lista de estudiantes", estudiante_list_str)
+        else:
+            messagebox.showwarning("Advertencia", "No hay estudiantes en el sistema")
+    except:
+        messagebox.showerror("Error no se puede mostrar al estudiante")
 
