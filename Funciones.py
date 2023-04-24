@@ -99,4 +99,14 @@ def eliminar_estudiante(nombre):
         messagebox.showinfo("Éxito", f"El estudiante {nombre} se eliminó del sistema")
     except:
         messagebox.showerror("Error no se eliminó al estudiante del sistema")
+# Función para guardar la información de los estudiantes en un archivo de texto
+def guardar_estudiante_lista(filenombre):
+    try:
+        estudiante_list = EstudianteList()
+        estudiante_dict_list = estudiante_list.to_dict_list()
+        with open(filenombre, "w") as file:
+            json.dump(estudiante_dict_list, file)
+            messagebox.showinfo("Éxito", f"La lista de estudiantes se guardó en el archivo {filenombre}")
+    except:
+        messagebox.showerror("Error no se pudo guardar al estudiante en el sistema")
 
