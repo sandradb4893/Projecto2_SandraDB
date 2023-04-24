@@ -26,3 +26,25 @@ eliminar_button.grid(row=7, column=0, padx=5, pady=5)
 
 file_menu.add_command(label="Guardar lista de estudiantes", command=lambda: MenuOpciones.menu_opcion(5, nombre_entry, edad_entry, grado_entry, filename_entry))
 file_menu.add_command(label="Cargar lista de estudiantes", command=lambda: MenuOpciones.menu_opcion(6, nombre_entry, edad_entry, grado_entry, filename_entry))
+# Crear botón para salir
+exit_button = Button(root, text="Salir del sistema", command=root.quit)
+exit_button.grid(row=8, column=0, padx=5, pady=5)
+
+# Crear campos para ingresar información del estudiante
+nombre_label = Label(root, text="Nombre:")
+nombre_label.grid(row=0, column=0, padx=5, pady=5)
+nombre_entry = Entry(root)
+nombre_entry.grid(row=0, column=1, padx=5, pady=5)
+
+edad_label = Label(root, text="Edad:")
+edad_label.grid(row=1, column=0, padx=5, pady=5)
+edad_entry = Entry(root)
+edad_entry.grid(row=1, column=1, padx=5, pady=5)
+
+grado_label = Label(root, text="Grado:")
+grado_label.grid(row=2, column=0, padx=5, pady=5)
+grado_entry = Entry(root)
+grado_entry.grid(row=2, column=1, padx=5, pady=5)
+
+root.mainloop()
+
