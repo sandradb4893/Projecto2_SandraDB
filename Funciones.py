@@ -91,4 +91,12 @@ def mostrar_estudiante_list():
             messagebox.showwarning("Advertencia", "No hay estudiantes en el sistema")
     except:
         messagebox.showerror("Error no se puede mostrar al estudiante")
+# Función para eliminar un estudiante del sistema
+def eliminar_estudiante(nombre):
+    try:
+        estudiante_list = EstudianteList()
+        estudiante_list.eliminar_estudiante(nombre)
+        messagebox.showinfo("Éxito", f"El estudiante {nombre} se eliminó del sistema")
+    except:
+        messagebox.showerror("Error no se eliminó al estudiante del sistema")
 
