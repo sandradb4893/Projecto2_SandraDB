@@ -108,5 +108,18 @@ def guardar_estudiante_lista(filenombre):
             json.dump(estudiante_dict_list, file)
             messagebox.showinfo("Éxito", f"La lista de estudiantes se guardó en el archivo {filenombre}")
     except:
-        messagebox.showerror("Error no se pudo guardar al estudiante en el sistema")
+        messagebox.showerror("Error no se pudo guardar al estudiante en el sistema")# Función para cargar la información de los estudiantes desde un archivo de texto
+def cargar_estudiante_lista(filenombre):
+    try:
+        with open(filenombre, "r") as file:
+            estudiante_dict_list = json.load(file)
+        estudiante_list = EstudianteList()
+        for estudiante_dict in estudiante_dict_list:
+            estudiante_list.agregar_estudiante(estudiante_dict["nombre"], estudiante_dict["edad"], estudiante_dict["grado"])
+        messagebox.showinfo("Éxito", f"La lista de estudiantes se cargó desde el archivo {filenombre}")
+    except FileNotFoundError:
+        messagebox.showerror("Error", f"No se encontró el archivo {filenombre}")
+    except json.JSONDecodeError:
+        messagebox.showerror("Error", f"El archivo {filenombre} no es un archivo válido")
+
 
